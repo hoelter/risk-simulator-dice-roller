@@ -32,10 +32,6 @@ export function useBattler() {
     numDefenders: '',
     numAttackersDice: '',
     numDefendersDice: ''
-    // numAttackers: '30',
-    // numDefenders: '25',
-    // numAttackersDice: '3',
-    // numDefendersDice: '2'
   });
   const [history, setHistory] = useState([]);
   const [isBattling, setIsBattling] = useState(false);
@@ -76,11 +72,6 @@ export function useBattler() {
       }
     }
 
-    // console.log('defenseRolls', defenseRolls);
-    // console.log('attackRolls', attackRolls);
-    // console.log('defenseTroopsLost', defenseTroopsLost);
-    // console.log('attackTroopsLost', attackTroopsLost);
-
     const newNumDefenders = Math.max(0, Number(gameState.numDefenders) - defenseTroopsLost);
     const newNumAttackers = Math.max(0, Number(gameState.numAttackers) - attackTroopsLost);
 
@@ -107,8 +98,6 @@ export function useBattler() {
       numAttackersDice: newNumAttackersDice.toString()
     };
 
-    // console.log('updatedGameState', updatedGameState);
-
     // set initial game state history first round
     const updatedHistory = history.length === 0 ? [gameState] : [...history];
     updatedHistory.push(updatedGameState)
@@ -128,10 +117,7 @@ function useRandomNumbers() {
   const [randomNumbers, setRandomNumbers] = useState([]);
   const [index, setIndex] = useState(0);
   useEffect(() => {
-    // console.log('index', index);
-    // console.log('randomnumberlength', randomNumbers.length);
     if (index + 20 > randomNumbers.length) {
-      // console.log('loadingrandomnumbers');
       loadRandomNumbers(randomNumbers, setRandomNumbers, index, setIndex);
     }
   }, [index])
@@ -153,8 +139,7 @@ const loadRandomNumbers = async (randomNumbers, setRandomNumbers, index, setInde
           newRandomNumbers.push(num);
         }
       }
-
-      // console.log('new random numbers', newRandomNumbers);
+      
       setRandomNumbers([...randomNumbers.slice(index), ...newRandomNumbers]);
 
       if (index > 0) {
