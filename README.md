@@ -1,3 +1,3 @@
 # war-simulator-dice-roller
 
-This is a simple cross platform app built with React Native utilizing truly random numbers to assist with rapid dice rolling for some board games.
+This is a cross platform app utilizing truly random numbers to assist with rapid dice rolling for Risk type board games. It was intentionally created with simple patterns and minimal dependencies as fun exercise to play with the React Native framework.
